@@ -1,12 +1,16 @@
-
-import React from "react";
+import React, { useState } from "react";
 import MailOutlineRoundedIcon from "@material-ui/icons/MailOutlineRounded";
 import TextField from "@material-ui/core/TextField";
-import { Button, LinearProgress } from "@material-ui/core";
+import { Button, LinearProgress, Container } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
+import IconButton from "@material-ui/core/IconButton";
+import CloseIcon from "@material-ui/icons/Close";
+import Collapse from '@material-ui/core/Collapse';
 import { Formik, Field } from "formik";
 import { motion } from "framer-motion";
+import { makeStyles } from "@material-ui/core/styles";
+import { Alert } from "@material-ui/lab";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   //CSS
@@ -15,8 +19,22 @@ const ContactForm = () => {
       width: "100%",
       marginTop: theme.spacing(1),
       color: "#d8d0d0",
-      "& .MuiInputBase-root": {
+      "& label.Mui-focused": {
         color: "white",
+      },
+      "& .MuiInput-underline:after": {
+        borderBottomColor: "#099d9d",
+      },
+      "& .MuiOutlinedInput-root": {
+        "& fieldset": {
+          borderColor: "#099d9d",
+        },
+        "&:hover fieldset": {
+          borderColor: "white",
+        },
+        "&.Mui-focused fieldset": {
+          borderColor: "#099d9d",
+        },
       },
     },
     submit: {
@@ -39,13 +57,38 @@ const ContactForm = () => {
       color: "#fff",
     },
     cssLabel: {
-      color : '#bfcfce'
+      color: "#bfcfce",
     },
-    cssFocused: {},
-
   }));
-  const classes = useStyles();
 
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(true); //close alert button
+  const [emailSent, setEmailSent] = useState(false);
+
+  /* Receive data from contact form by email*/
+  function sendEmail(e) {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_es7l897",
+        "template_r9wmhvd",
+        e.target,
+        "user_5QxnFjF9fjdqCMAYK0gki"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    e.target.reset();
+
+    setEmailSent(!emailSent);
+  }
   return (
     <>
       <Formik
@@ -71,159 +114,191 @@ const ContactForm = () => {
         }}
       >
         {({ submitForm, isSubmitting }) => (
-          <form className={classes.form}>
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <Field
-                  component={TextField}
-                  autoComplete="fname"
-                  name="firstName"
-                  variant="outlined"
-                  required
-                  fullWidth
-                  id="firstName"
-                  label="First Name"
-                  autoFocus
-                  inputProps={{
-                    maxLength: 12,
-                    minLength: 3,
-                    className: classes.inputStyle,
-                  }}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.cssLabel,
-                      focused: classes.cssFocused,
-                    },                    
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.cssOutlinedInput,
-                      focused: classes.cssFocused,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                    inputMode: "numeric"
-                  }}
-                />
+          <>
+            <Container fixed>
+              {emailSent && (
+                <Collapse in={open}>
+                  <Alert
+                    action={
+                      <IconButton
+                        aria-label="close"
+                        color="inherit"
+                        size="small"
+                        onClick={() => {
+                          setOpen(false);
+                        }}
+                      >
+                        <CloseIcon fontSize="inherit" />
+                      </IconButton>
+                    }
+                    severity="success"
+                    style={{ margin: 10 }}
+                  >
+                    <strong>Thank you</strong>, I have received your message
+                    successfully.{" "}
+                  </Alert>
+                </Collapse>
+              )}
+            </Container>
+            <form className={classes.form} onSubmit={sendEmail}>
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                  <Field
+                    component={TextField}
+                    autoComplete="fname"
+                    name="firstname"
+                    variant="outlined"
+                    required
+                    fullWidth
+                    id="firstName"
+                    label="First Name"
+                    inputProps={{
+                      maxLength: 12,
+                      minLength: 3,
+                      className: classes.inputStyle,
+                    }}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                      name: "firstname",
+                      inputMode: "numeric",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <Field
+                    component={TextField}
+                    variant="outlined"
+                    className="textfield"
+                    required
+                    fullWidth
+                    id="custom-css-outlined-input"
+                    label="Last Name"
+                    name="lastname"
+                    autoComplete="lname"
+                    inputProps={{
+                      maxLength: 12,
+                      minLength: 3,
+                      className: classes.inputStyle,
+                    }}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                      name: "lastname",
+                      inputMode: "numeric",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Field
+                    component={TextField}
+                    variant="outlined"
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="email"
+                    label="Email Address"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    inputProps={{
+                      className: classes.inputStyle,
+                    }}
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                      name: "email",
+                      inputMode: "numeric",
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Field
+                    component={TextField}
+                    id="yourMessage"
+                    variant="outlined"
+                    name="message"
+                    multiline
+                    required
+                    autoComplete="message"
+                    fullWidth
+                    label="Your Message"
+                    InputLabelProps={{
+                      classes: {
+                        root: classes.cssLabel,
+                        focused: classes.cssFocused,
+                      },
+                    }}
+                    InputProps={{
+                      classes: {
+                        root: classes.cssOutlinedInput,
+                        focused: classes.cssFocused,
+                        notchedOutline: classes.notchedOutline,
+                      },
+                      name: "message",
+                    }}
+                    inputProps={{
+                      maxLength: "600",
+                      minLength: "10",
+                      className: classes.inputStyle,
+                    }}
+                  />
+                </Grid>
               </Grid>
-              <Grid item xs={12} sm={6}>
- 
-                <Field
-                  component={TextField}
-                  variant="outlined"
-                  className="textfield"
-                  required
-                  fullWidth
-                  id="custom-css-outlined-input"
-                  label="Last Name"
-                  name="lastName"
-                  autoComplete="lname"
-                  inputProps={{
-                    maxLength: 12,
-                    minLength: 3,
-                    className: classes.inputStyle,
-                  }}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.cssLabel,
-                      focused: classes.cssFocused,
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.cssOutlinedInput,
-                      focused: classes.cssFocused,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                    inputMode: "numeric"
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Field
-                  component={TextField}
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  inputProps={{
-                    className: classes.inputStyle,
-                  }}
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.cssLabel,
-                      focused: classes.cssFocused,
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.cssOutlinedInput,
-                      focused: classes.cssFocused,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                    inputMode: "numeric"
-                  }}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  id="yourMessage"
-                  multiline
-                  required
-                  autoComplete="message"
-                  fullWidth
-                  label="Your Message"
-                  InputLabelProps={{
-                    classes: {
-                      root: classes.cssLabel,
-                      focused: classes.cssFocused,
-                    },
-                  }}
-                  InputProps={{
-                    classes: {
-                      root: classes.cssOutlinedInput,
-                      focused: classes.cssFocused,
-                      notchedOutline: classes.notchedOutline,
-                    },
-                  }}
-                  inputProps={{
-                    maxLength: "10",
-                    minLength: "5",
-                    className: classes.inputStyle,
-                  }}
-                />
-              </Grid>
-            </Grid>
-            {isSubmitting && <LinearProgress />}
-            <br />
+              {isSubmitting && <LinearProgress />}
+              <br />
 
-            <Grid container style={{ justifyContent: "center" }}>
-              <motion.div
-                className="animatable"
-                whileHover={{
-                  scale: 1.0,
-                  transition: { duration: 0.2 },
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Button
-                  type="submit"
-                  size="large"
-                  variant="contained"
-                  color="primary"
-                  startIcon={<MailOutlineRoundedIcon />}
-                  className={classes.submit}
-                  onClick={submitForm}
+              <Grid container style={{ justifyContent: "center" }}>
+                <motion.div
+                  className="animatable"
+                  whileHover={{
+                    scale: 1.0,
+                    transition: { duration: 0.2 },
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  Send
-                </Button>
-              </motion.div>
-            </Grid>
-          </form>
+                  <Button
+                    type="submit"
+                    size="large"
+                    variant="contained"
+                    color="primary"
+                    startIcon={<MailOutlineRoundedIcon />}
+                    className={classes.submit}
+                    onClick={submitForm}
+                  >
+                    Send
+                  </Button>
+                </motion.div>
+              </Grid>
+            </form>
+          </>
         )}
       </Formik>
     </>

@@ -7,7 +7,7 @@ import MailOutlineRoundedIcon from "@material-ui/icons/MailOutlineRounded";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import ContactForm from "./ContactForm";
-import contactImg from "../../assets/img/contact.jpg";
+import contactImg from "../../assets/img/contact.png";
 import email from "../../assets/img/email.svg";
 import linkedin from "../../assets/img/linkedin.svg";
 import github from "../../assets/img/github.svg";

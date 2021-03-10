@@ -1,7 +1,7 @@
 import React from "react";
 import "antd/dist/antd.css";
 import Navbar from "./components/navbar/Navbar";
-//import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Contact from './components/contact/Contact'
@@ -52,7 +52,7 @@ class App extends React.Component {
                   Move top
                 </button> */}
  
-              {/* <Footer /> */}
+              <Footer /> 
             </>
           );
         }}

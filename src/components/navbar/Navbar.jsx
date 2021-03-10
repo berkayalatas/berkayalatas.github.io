@@ -7,7 +7,7 @@ import SettingsTwoToneIcon from "@material-ui/icons/SettingsTwoTone";
 import WorkTwoToneIcon from "@material-ui/icons/WorkTwoTone";
 import MailTwoToneIcon from "@material-ui/icons/MailTwoTone";
 import Grid from "@material-ui/core/Grid";
-import logo from "../../assets/img/logo.png";
+//import logo from "../../assets/img/logo.png";
 
 const style = {
   width: "100%",
@@ -21,6 +21,7 @@ const style = {
   color: "#00e8e8",
   display: "flex",
   fontFamily: "Poppins",
+  fontWeight:400,
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
