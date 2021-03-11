@@ -1,6 +1,5 @@
 import React from "react";
-import "antd/dist/antd.css";
-import Navbar from "./components/navbar/Navbar";
+import MotionNav from "./components/navbar/Navigation";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
@@ -8,11 +7,12 @@ import Contact from './components/contact/Contact'
 import "fullpage.js/vendors/scrolloverflow";
 import ReactFullpage from "@fullpage/react-fullpage";
 import "./App.css";
+
 class MySection extends React.Component {
   render() {
     return (
       <div className="section">
-        <h3>{this.props.content}</h3>
+        <div>{this.props.content}</div>
       </div>
     );
   }
@@ -41,8 +41,8 @@ class App extends React.Component {
         
         render={({ state, fullpageApi }) => {
           return (
-            <>
-             <Navbar /> 
+            <>           
+             <MotionNav /> 
               <MySection content={<Home />} />
 
               <MySection content={<About />} />

@@ -8,6 +8,8 @@ import Button from "@material-ui/core/Button";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { motion } from "framer-motion";
+import logo from '../../assets/img/logo.png'
+import './home.css'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     height: "100vh",
   },
   main: {
-    marginTop: theme.spacing(18),
+    marginTop: theme.spacing(8),
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -62,9 +64,16 @@ export default function Home() {
       <div>
         <Animation />
       </div>
+      <Grid container>
+        <Grid item>
+          <img src={logo} 
+            style={{width:65 , height:65, marginLeft:20, marginTop:20}}
+          alt="LOGO"/>
+        </Grid>
+      </Grid>
       <Grid container className={classes.main}>
         <Grid item>
-          <Typography variant="h2" className={classes.text} gutterBottom>
+          <Typography variant="h2" id="hello" className={classes.text} gutterBottom>
             HELLO !
           </Typography>
           <Typography variant="h3" className={classes.text} gutterBottom>
@@ -74,7 +83,7 @@ export default function Home() {
             Web Developer
           </Typography>
 
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
+          <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.9 }}>
             <Button
               variant="contained"
               size="large"

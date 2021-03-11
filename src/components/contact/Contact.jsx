@@ -31,9 +31,13 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   logos: {
-    width: "60px",
-    height: "60px",
+    width: "45px",
+    height: "45px",
+    "&:hover": {
+      opacity:0.7
+    },
   },
+ 
 }));
 
 export default function Contact() {
@@ -65,27 +69,27 @@ export default function Contact() {
           <ContactForm /> {/*  ContactForm Component */}
         </div>
         <Grid container style={{ justifyContent: "center" }}>
-          <Grid item style={{ margin: 15 }}>
+          <Grid item style={{ marginRight: 20 }}>
             <a href="mailto:berkay.3304@gmail.com">
               <img src={email} className={classes.logos} alt="e-mail" />
             </a>
           </Grid>
-          <Grid item style={{ margin: 15 }}>
+          <Grid item style={{ marginRight: 20 }}>
             <a href="https://github.com/berkayalatas">
               <img src={github} className={classes.logos} alt="github" />
             </a>
           </Grid>
-          <Grid item style={{ margin: 15 }}>
+          <Grid item style={{ marginRight: 20 }}>
             <a href="https://www.linkedin.com/in/berkayalatas/">
               <img src={linkedin} className={classes.logos} alt="linkedin" />
             </a>
           </Grid>
-          <Grid item style={{ margin: 15 }}>
+          <Grid item style={{ marginRight: 20 }}>
             <a href="https://codepen.io/berkayalatas">
               <img src={codepen} className={classes.logos} alt="codepen" />
             </a>
           </Grid>
-          <Grid item style={{ margin: 15 }}>
+          <Grid item style={{ marginRight: 20 }}>
             <a href="https://instagram.com/berkayalatas">
               <img src={instagram} className={classes.logos} alt="instagram" />
             </a>

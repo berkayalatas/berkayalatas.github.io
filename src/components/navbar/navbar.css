@@ -1,21 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@400;500&display=swap');
 
-.menu1 {
-    width: "100%";
-    height: 60;
+.menuItems {
+    background: rgb(1, 10, 11);
+    background: radial-gradient(circle, rgba(1, 10, 11, 1) 0%, rgba(1, 16, 18, 1) 51%, rgba(1, 10, 11, 1) 100%);
+    height: 100vh;
+    width: 60vw;
+    position: fixed;
     top: 0;
-    position: "fixed";
-    z-index: 999;
-    background-color: "#181818";
-    opacity: 0.8;
-    color: "#00e8e8";
-    display: "flex";
-    flex-direction: "row";
-    align-items: "center";
-    justify-content: "center";
-    font-size: 18;
-    font-weight: "bold";
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins, sans-serif"
 }
 
-.menu:hover {
-    color: "#fff"
+.menuIcon {
+    position: fixed;
+    z-index: 201;
+    right: 25px;
+    top: 25px;
+}
+
+.navItems {
+    color: rgb(238, 230, 230);
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+.navItems:hover {
+    color: rgb(24, 194, 194)
+}
+
+
+@media all and (max-width:570px) {
+    .navItems {
+        color: rgb(238, 230, 230);
+ 
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        font-size: 20px;
+ 
+    }
+
 }

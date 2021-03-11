@@ -17,7 +17,7 @@ function Copyright() {
         href="https://www.linkedin.com/in/berkayalatas/"
         style={{ color: "#fff", textAlign: "center", fontFamily: "Poppins" }}
       >
-        Berkay Alatas
+        <strong>Berkay Alatas</strong> 
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
