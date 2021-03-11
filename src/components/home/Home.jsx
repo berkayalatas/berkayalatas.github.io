@@ -116,7 +116,7 @@ export default function Home() {
           </motion.div>
         </Grid>
       </Grid>
-      <Grid container className={classes.scroll}>
+      <Grid container id="scroll-down" className={classes.scroll}>
         <Grid item>
           <ScrollDown />
         </Grid>

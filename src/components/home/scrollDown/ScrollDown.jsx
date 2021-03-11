@@ -3,7 +3,7 @@ import "./scrollDown.css";
 
 const ScrollDown = () => {
   return (
-    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems: 'center'}}>
+    <div id="scroll-down" style={{display: 'flex', flexDirection: 'column', justifyContent: 'center',alignItems: 'center'}}>
       <div className="chevron"></div>
       <div className="chevron"></div>
       <div className="chevron"></div>
