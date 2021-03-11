@@ -1,6 +1,8 @@
 @media all and (max-width:570px) {
 
-    h2,
+    h2 {
+        font-size: 48 !important;
+    }
     h3 {
         font-size: 45px !important;
     }

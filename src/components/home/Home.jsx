@@ -1,15 +1,15 @@
-
 import React, { useState } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { makeStyles } from "@material-ui/core/styles";
 import Animation from "./Animation";
-import { Grid, Typography } from "@material-ui/core";
+import { Grid, Typography, Container } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { motion } from "framer-motion";
-import logo from '../../assets/img/logo.png'
-import './home.css'
+import logo from "../../assets/img/logo.png";
+import "./home.css";
+import ScrollDown from "./scrollDown/ScrollDown";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,6 +52,11 @@ const useStyles = makeStyles((theme) => ({
       transition: "0.3s",
     },
   },
+  scroll: {
+    justifyContent: "center",
+    position: "absolute",
+    bottom: 70,
+  },
 }));
 
 export default function Home() {
@@ -66,22 +71,31 @@ export default function Home() {
       </div>
       <Grid container>
         <Grid item>
-          <img src={logo} 
-            style={{width:65 , height:65, marginLeft:20, marginTop:20}}
-          alt="LOGO"/>
+          <img
+            src={logo}
+            style={{ width: 65, height: 65, marginLeft: 20, marginTop: 20 }}
+            alt="LOGO"
+          />
         </Grid>
       </Grid>
       <Grid container className={classes.main}>
         <Grid item>
-          <Typography variant="h2" id="hello" className={classes.text} gutterBottom>
-            HELLO !
-          </Typography>
-          <Typography variant="h3" className={classes.text} gutterBottom>
-            I'm <span style={{ color: "#17b6b6" }}> Berkay Alatas </span>
-          </Typography>
-          <Typography variant="h3" className={classes.text} gutterBottom>
-            Web Developer
-          </Typography>
+          <motion.div initial={{ x: -1000 }} animate={{ x: 20 }}>
+            <Typography
+              variant="h2"
+              id="hello"
+              className={classes.text}
+              gutterBottom
+            >
+              HELLO !
+            </Typography>
+            <Typography variant="h3" className={classes.text} gutterBottom>
+              I'm <span style={{ color: "#17b6b6" }}> Berkay Alatas </span>
+            </Typography>
+            <Typography variant="h3" className={classes.text} gutterBottom>
+              Web Developer
+            </Typography>
+          </motion.div>
 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.9 }}>
             <Button
@@ -100,7 +114,11 @@ export default function Home() {
               )}
             </Button>
           </motion.div>
-          
+        </Grid>
+      </Grid>
+      <Grid container className={classes.scroll}>
+        <Grid item>
+          <ScrollDown />
         </Grid>
       </Grid>
     </div>

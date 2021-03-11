@@ -8,6 +8,7 @@ import WorkTwoToneIcon from "@material-ui/icons/WorkTwoTone";
 import MailTwoToneIcon from "@material-ui/icons/MailTwoTone";
 import logo from "../../assets/img/logo.png";
 import { Grid } from "@material-ui/core";
+import ContactIcons from './ContactIcons'
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +43,7 @@ const Navigation = () => {
     <nav>
       {isOpen ? (
         <motion.svg
-          class="menuIcon"
+          className="menuIcon"
           variants={iconVariants}
           onClick={handleOpen}
           initial={false}
@@ -60,7 +61,7 @@ const Navigation = () => {
         </motion.svg>
       ) : (
         <motion.svg
-          class="menuIcon"
+          className="menuIcon"
           variants={iconVariants}
           onClick={handleOpen}
           initial={false}
@@ -106,6 +107,7 @@ const Navigation = () => {
             </a>
           </Grid>
         </Grid>
+
         <a className="navItems" href="#home">
           <HomeTwoToneIcon /> HOME
         </a>
@@ -121,6 +123,8 @@ const Navigation = () => {
         <a className="navItems" href="#contact">
           <MailTwoToneIcon /> CONTACT
         </a>
+
+        <ContactIcons />
       </motion.div>
     </nav>
   );

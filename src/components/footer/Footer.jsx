@@ -4,7 +4,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Link from "@material-ui/core/Link";
-
+import ContactIcons from "../navbar/ContactIcons";
+ 
 function Copyright() {
   return (
     <Typography
@@ -17,7 +18,7 @@ function Copyright() {
         href="https://www.linkedin.com/in/berkayalatas/"
         style={{ color: "#fff", textAlign: "center", fontFamily: "Poppins" }}
       >
-        <strong>Berkay Alatas</strong> 
+        <strong>Berkay Alatas</strong>
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -47,6 +48,7 @@ export default function Footer() {
       <footer className={classes.footer}>
         <Container maxWidth="sm">
           <Copyright />
+          <ContactIcons />
         </Container>
       </footer>
     </div>
