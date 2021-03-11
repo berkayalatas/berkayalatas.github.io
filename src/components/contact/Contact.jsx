@@ -46,7 +46,7 @@ export default function Contact() {
   return (
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
-      <Grid item sm={false} md={5} className={classes.image} />
+      <Grid item id="imgContainer" sm={false} sm={false} md={5} className={classes.image} />
       <Grid
         item
         sm={12}
