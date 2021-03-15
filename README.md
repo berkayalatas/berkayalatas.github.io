@@ -1,6 +1,15 @@
 ## Portfolio Website :
 ### https://berkay.engineer
 
+Technologies 
+------------ 
+React.js 
+React Router Dom 
+Material UI 
+Formik |        
+Frame Motion |       
+Emailjs | 
+       
 
 #  Installation and Setup Instructions
 ### Example:
