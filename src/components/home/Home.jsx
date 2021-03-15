@@ -99,7 +99,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.9 }}>
-            <Link to="/about">
+            <Link to="/about" style={{textDecoration: "none"}}>
               <Button
                 variant="contained"
                 size="large"
