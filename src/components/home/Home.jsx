@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import logo from "../../assets/img/logo.png";
 import "./home.css";
 import ScrollDown from "./scrollDown/ScrollDown";
+import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -98,21 +99,23 @@ export default function Home() {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.9 }}>
-            <Button
-              variant="contained"
-              size="large"
-              href="#about"
-              className={classes.button}
-              onMouseEnter={() => setIsDown(true)}
-              onMouseLeave={() => setIsDown(false)}
-            >
-              About Me{" "}
-              {isDown ? (
-                <ArrowDownwardIcon fontSize="large" />
-              ) : (
-                <ArrowForwardIcon fontSize="large" />
-              )}
-            </Button>
+            <Link to="/about">
+              <Button
+                variant="contained"
+                size="large"
+                href="#about"
+                className={classes.button}
+                onMouseEnter={() => setIsDown(true)}
+                onMouseLeave={() => setIsDown(false)}
+              >
+                About Me{" "}
+                {isDown ? (
+                  <ArrowDownwardIcon fontSize="large" />
+                ) : (
+                  <ArrowForwardIcon fontSize="large" />
+                )}
+              </Button>
+            </Link>
           </motion.div>
         </Grid>
       </Grid>

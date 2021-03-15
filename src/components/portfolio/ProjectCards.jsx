@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
  
-
 const ProjectCards = () => {
  
   return (
@@ -18,6 +17,7 @@ const ProjectCards = () => {
             className="card"
             key={index}
             whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
             style={{
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",

@@ -4,25 +4,53 @@ import Navigation from "./components/navbar/Navigation";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
-import Contact from './components/contact/Contact'
-import Portfolio from './components/portfolio/Portfolio'
+import Contact from "./components/contact/Contact";
+import Portfolio from "./components/portfolio/Portfolio";
+import NotFound from "./components/notFound/NotFound"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 //import "fullpage.js/vendors/scrolloverflow";
 //import ReactFullpage from "@fullpage/react-fullpage";
 
 const App = () => {
   return (
     <div>
- 
+      <Router>
         <Navigation />
-        <Home />
-        <About />
-        <Portfolio />
-        <Contact />
-        <Footer />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+            <About />
+            <Portfolio />
+            <Contact />
+          </Route>
 
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/portfolio">
+            <Portfolio />
+          </Route>
+
+          <Route path="/contact">
+            <Contact />
+          </Route>
+
+          <Route path="*">
+            <Redirect exact to="/404" />
+            <NotFound />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
     </div>
-  )
-}
+  );
+};
 
 export default App;
 
@@ -56,11 +84,11 @@ export default App;
 //         licenseKey='YOUR_KEY_HERE'
 //         onLeave={this.onLeave.bind(this)}
 //         afterLoad={this.afterLoad.bind(this)}
-        
+
 //         render={({ state, fullpageApi }) => {
 //           return (
-//             <>           
-//              <Navigation /> 
+//             <>
+//              <Navigation />
 //               <MySection content={<Home />} />
 
 //               <MySection content={<About />} />
@@ -69,8 +97,8 @@ export default App;
 //               {/* <button onClick={() => fullpageApi.moveTo(1, 0)}>
 //                   Move top
 //                 </button> */}
- 
-//               <Footer /> 
+
+//               <Footer />
 //             </>
 //           );
 //         }}

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   footer: {
     padding: theme.spacing(2 ,2 ,0 ,0),
     marginTop: "auto",
-    backgroundColor: "#171b1a",
+    backgroundColor: "#002927",
     fontFamily: "Poppins",
   },
 }));

@@ -287,7 +287,6 @@ const ContactForm = () => {
                     type="submit"
                     size="large"
                     variant="contained"
-                    color="primary"
                     startIcon={<MailOutlineRoundedIcon />}
                     className={classes.submit}
                     onClick={submitForm}

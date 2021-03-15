@@ -6,6 +6,7 @@ import PersonOutlineTwoToneIcon from "@material-ui/icons/PersonOutlineTwoTone";
 import AboutCards from "./AboutCards";
 import about from "../../assets/img/about.svg";
 import SkillCards from './SkillCards'
+import Divider from "@material-ui/core/Divider";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,6 +43,7 @@ export default function About() {
             />{" "}
             About Me
           </Typography>
+          <Divider variant="middle" style={{backgroundColor: "#00e8ff",}}/>
         </Grid>
       </Grid>
 

@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import FormHelperText from "@material-ui/core/FormHelperText";
 import Grid from "@material-ui/core/Grid";
@@ -13,6 +12,7 @@ import linkedin from "../../assets/img/linkedin.svg";
 import github from "../../assets/img/github.svg";
 import codepen from "../../assets/img/codepen.svg";
 import instagram from "../../assets/img/instagram.svg";
+
 //CSS
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,10 +34,9 @@ const useStyles = makeStyles((theme) => ({
     width: "45px",
     height: "45px",
     "&:hover": {
-      opacity:0.7
+      opacity: 0.7,
     },
   },
- 
 }));
 
 export default function Contact() {
@@ -45,8 +44,14 @@ export default function Contact() {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
-      <Grid item id="imgContainer" sm={false} sm={false} md={5} className={classes.image} />
+      <Grid
+        item
+        id="imgContainer"
+        sm={false}
+        sm={false}
+        md={5}
+        className={classes.image}
+      />
       <Grid
         item
         sm={12}
@@ -58,7 +63,11 @@ export default function Contact() {
       >
         <div className={classes.paper}>
           <Typography component="h1" variant="h3" style={{ color: "#fff" }}>
-            <MailOutlineRoundedIcon style={{ color: '#16b4b4' }} fontSize="large"/> Contact
+            <MailOutlineRoundedIcon
+              style={{ color: "#16b4b4" }}
+              fontSize="large"
+            />{" "}
+            Contact
           </Typography>
           <FormHelperText
             id="my-helper-text"
