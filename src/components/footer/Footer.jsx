@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   footer: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(2 ,2 ,0 ,0),
     marginTop: "auto",
     backgroundColor: "#171b1a",
     fontFamily: "Poppins",

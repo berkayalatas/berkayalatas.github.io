@@ -33,7 +33,7 @@ const ContactForm = () => {
           borderColor: "white",
         },
         "&.Mui-focused fieldset": {
-          borderColor: "#099d9d",
+          borderColor: "#05aeff",
         },
       },
     },
@@ -94,7 +94,6 @@ const ContactForm = () => {
       <Formik
         initialValues={{
           email: "",
-          password: "",
         }}
         validate={(values) => {
           const errors = {};

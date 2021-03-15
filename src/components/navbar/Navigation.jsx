@@ -3,7 +3,6 @@ import "./navbar.css";
 import { motion } from "framer-motion";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import PersonOutlineTwoToneIcon from "@material-ui/icons/PersonOutlineTwoTone";
-import SettingsTwoToneIcon from "@material-ui/icons/SettingsTwoTone";
 import WorkTwoToneIcon from "@material-ui/icons/WorkTwoTone";
 import MailTwoToneIcon from "@material-ui/icons/MailTwoTone";
 import logo from "../../assets/img/logo.png";
@@ -113,9 +112,6 @@ const Navigation = () => {
         </a>
         <a className="navItems" href="#about">
           <PersonOutlineTwoToneIcon /> ABOUT
-        </a>
-        <a className="navItems" href="#skills">
-          <SettingsTwoToneIcon /> SKILLS
         </a>
         <a className="navItems" href="#portfolio">
           <WorkTwoToneIcon /> PORTFOLIO

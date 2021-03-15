@@ -57,8 +57,8 @@ export default function Contact() {
         square
       >
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5" style={{ color: "#fff" }}>
-            <MailOutlineRoundedIcon /> Contact
+          <Typography component="h1" variant="h3" style={{ color: "#fff" }}>
+            <MailOutlineRoundedIcon style={{ color: '#16b4b4' }} fontSize="large"/> Contact
           </Typography>
           <FormHelperText
             id="my-helper-text"

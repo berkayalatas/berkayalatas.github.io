@@ -1,13 +1,31 @@
 import React from "react";
+import "./App.css";
 import Navigation from "./components/navbar/Navigation";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import About from "./components/about/About";
 import Contact from './components/contact/Contact'
-import "fullpage.js/vendors/scrolloverflow";
+import Portfolio from './components/portfolio/Portfolio'
+//import "fullpage.js/vendors/scrolloverflow";
 //import ReactFullpage from "@fullpage/react-fullpage";
-import "./App.css";
+
+const App = () => {
+  return (
+    <div>
  
+        <Navigation />
+        <Home />
+        <About />
+        <Portfolio />
+        <Contact />
+        <Footer />
+
+    </div>
+  )
+}
+
+export default App;
+
 // class MySection extends React.Component {
 //   render() {
 //     return (
@@ -60,19 +78,3 @@ import "./App.css";
 //     );
 //   }
 // }
- 
-const App = () => {
-  return (
-    <div>
-      <Navigation />
-      <Home />
-      <About />
-      <Contact />
-      <Footer />
-    </div>
-  )
-}
-
-
-export default App;
-
