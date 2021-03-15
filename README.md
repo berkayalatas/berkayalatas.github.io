@@ -6,9 +6,10 @@ Technologies |
 React.js |
 React Router Dom |
 Material UI |
+CSS|
 Formik |        
-Frame Motion |       
-Emailjs | 
+Framer Motion |       
+Email.js | 
        
 
 #  Installation and Setup Instructions
