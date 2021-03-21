@@ -28,7 +28,7 @@ const ContactIcons = () => {
         </Grid>
         <Grid item className="icon">
           <Tooltip title="Github">
-            <a href="https://www.linkedin.com/in/berkayalatas/">
+            <a href="https://github.com/berkayalatas">
               <GitHubIcon style={color} fontSize="default" />
             </a>
           </Tooltip>
