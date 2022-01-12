@@ -13,8 +13,8 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-//import "fullpage.js/vendors/scrolloverflow";
-//import ReactFullpage from "@fullpage/react-fullpage";
+// import "fullpage.js/vendors/scrolloverflow";
+// import ReactFullpage from "@fullpage/react-fullpage";
 
 const App = () => {
   return (
@@ -71,7 +71,7 @@ export default App;
 //     //console.log("After load: " + destination.index);
 //   }
 //   render() {
-//     const anchors = ["home", "about", "contact"];
+//     const anchors = ["home", "about", "portfolio", "contact"];
 
 //     return (
 //       <ReactFullpage
@@ -79,7 +79,7 @@ export default App;
 //         navigation
 //         scrollingSpeed={600}
 //         navigationTooltips={anchors}
-//         scrollOverflow={false}
+//         scrollOverflow={true}
 //         scrollBar={true}
 //         licenseKey='YOUR_KEY_HERE'
 //         onLeave={this.onLeave.bind(this)}
@@ -93,7 +93,10 @@ export default App;
 
 //               <MySection content={<About />} />
 
+//               <MySection content={ <Portfolio />} />
+
 //               <MySection content={ <Contact />} />
+
 //               {/* <button onClick={() => fullpageApi.moveTo(1, 0)}>
 //                   Move top
 //                 </button> */}
@@ -106,3 +109,4 @@ export default App;
 //     );
 //   }
 // }
+// export default App;
