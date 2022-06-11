@@ -6,9 +6,18 @@ import writingroom from '../assets/img/writingroom.PNG'
 import hotel from '../assets/img/hotel.jpg'
 import archer from '../assets/img/archer.jpg'
 import tesla from '../assets/img/tesla.png'
-import gym from '../assets/img/gym.png'
+import vehicle1 from '../assets/img/vehicle1.PNG'
 
 const portfolioData = [
+    {
+        id:8,
+        projectTitle: "Vehicle Network",
+        technologies: "React.js - Next.js - Firebase",
+        image: vehicle1,
+        description: "User-to-user car rental application, Users can list their own cars or rent a car from others.The application includes features such as user authentication, car filtering, updating and deleting your car, etc. Users can determine the nearest cars on the map.",
+        githubLink: "https://github.com/berkayalatas/vehicle_network",
+        projectWebsite: "https://vehicle-network.vercel.app"
+    },
     {
         id:9,
         projectTitle: "Travel Book",
@@ -80,15 +89,6 @@ const portfolioData = [
         description: "Tesla Website Clone with Bootstrap.Designed with Bootstrap Studio.",
         githubLink: "https://github.com/berkayalatas/tesla_website",
         projectWebsite: "https://tesla-template.netlify.app"
-    },
-    {
-        id:8,
-        projectTitle: "Guardian Gym",
-        technologies: "Tailwind CSS",
-        image: gym,
-        description: "GYM Website design with Tailwind CSS.",
-        githubLink: "https://github.com/berkayalatas/gym_website",
-        projectWebsite: "https://guardian-gym.netlify.app"
     },
 ]
 
