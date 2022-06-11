@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.40cdc574.chunk.css",
-    "main.js": "/static/js/main.a4483bd4.chunk.js",
-    "main.js.map": "/static/js/main.a4483bd4.chunk.js.map",
+    "main.js": "/static/js/main.b1536869.chunk.js",
+    "main.js.map": "/static/js/main.b1536869.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b155ef60.js",
     "runtime-main.js.map": "/static/js/runtime-main.b155ef60.js.map",
     "static/js/2.30e484c6.chunk.js": "/static/js/2.30e484c6.chunk.js",
@@ -24,7 +24,6 @@
     "static/media/email.681b9c6c.svg": "/static/media/email.681b9c6c.svg",
     "static/media/error.9179ee88.svg": "/static/media/error.9179ee88.svg",
     "static/media/github.dca48f73.svg": "/static/media/github.dca48f73.svg",
-    "static/media/gym.11a8876f.png": "/static/media/gym.11a8876f.png",
     "static/media/hotel.b2ec239e.jpg": "/static/media/hotel.b2ec239e.jpg",
     "static/media/html.8daa82ad.svg": "/static/media/html.8daa82ad.svg",
     "static/media/instagram.b8b03630.svg": "/static/media/instagram.b8b03630.svg",
@@ -43,6 +42,7 @@
     "static/media/responsive.c94d948d.svg": "/static/media/responsive.c94d948d.svg",
     "static/media/slicepizza.19ecd305.PNG": "/static/media/slicepizza.19ecd305.PNG",
     "static/media/tesla.6ea1624a.png": "/static/media/tesla.6ea1624a.png",
+    "static/media/vehicle1.c14b5822.PNG": "/static/media/vehicle1.c14b5822.PNG",
     "static/media/voting.5e5849bd.PNG": "/static/media/voting.5e5849bd.PNG",
     "static/media/web.ad412da7.svg": "/static/media/web.ad412da7.svg",
     "static/media/writingroom.29f5f600.PNG": "/static/media/writingroom.29f5f600.PNG"
@@ -51,6 +51,6 @@
     "static/js/runtime-main.b155ef60.js",
     "static/js/2.30e484c6.chunk.js",
     "static/css/main.40cdc574.chunk.css",
-    "static/js/main.a4483bd4.chunk.js"
+    "static/js/main.b1536869.chunk.js"
   ]
 }
